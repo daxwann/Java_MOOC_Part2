@@ -14,7 +14,7 @@ public class Flight {
     }
 
     public String getAirportCodes() {
-        return " (" + this.departureCode + "-" + this.destinationCode + ")";
+        return "(" + this.departureCode + "-" + this.destinationCode + ")";
     }
 
     public String toString() {

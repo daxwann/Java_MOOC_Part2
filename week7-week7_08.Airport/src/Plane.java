@@ -11,11 +11,7 @@ public class Plane {
         return this.id;
     }
 
-    public int getCapacity() {
-        return this.capacity;
-    }
-
     public String toString() {
-        return this.id + " (" + this.capacity + ")";
+        return this.id + " (" + this.capacity + " ppl)";
     }
 }

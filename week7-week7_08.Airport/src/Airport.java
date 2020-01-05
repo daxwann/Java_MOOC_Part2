@@ -20,15 +20,19 @@ public class Airport {
     }
 
     public void addFlight(Flight flight) {
-        if ((this.flights.containsKey(flight.getFlightPlaneId()))) {
-            this.flights.get(flight.getFlightPlaneId()).add(flight);
-        } else {
+        if (!this.flights.containsKey(flight.getFlightPlaneId())) {
             this.flights.put(flight.getFlightPlaneId(), new ArrayList<Flight>());
         }
+
+        this.flights.get(flight.getFlightPlaneId()).add(flight);
     }
 
     public void printFlights() {
-        
+        for (String id : this.flights.keySet()) {
+            for (Flight flight : this.flights.get(id)) {
+                System.out.println(flight);
+            }
+        }
     }
 
     public void printPlanes() {
