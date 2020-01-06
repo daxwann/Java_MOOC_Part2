@@ -11,9 +11,43 @@ public class RegistrationPlate {
         this.country = country;
     }
 
+    public String getRegCode() {
+        return this.regCode;
+    }
+
+    public String getCountry() {
+        return this.country;
+    }
+
     @Override
     public String toString() {
         return country + " " + regCode;
     }
 
+    @Override
+    public boolean equals(Object compared) {
+        if (compared == null) {
+            return false;
+        }
+
+        if (getClass() != compared.getClass()) {
+            return false;
+        }
+
+        RegistrationPlate comparedPlate = (RegistrationPlate) compared;
+
+        if (!this.toString().equals(comparedPlate.toString())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public int hashCode() {
+        if (this.regCode == null || this.country == null) {
+            return 7;
+        }
+
+        return this.country.hashCode() + this.regCode.hashCode();
+    }
 }
