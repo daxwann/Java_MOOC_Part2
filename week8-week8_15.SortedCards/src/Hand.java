@@ -33,6 +33,11 @@ public class Hand implements Comparable<Hand> {
         Collections.sort(this.cards);
     }
 
+    public void sortAgainstSuit() {
+        SortAgainstSuitAndValue suitSorter = new SortAgainstSuitAndValue();
+        Collections.sort(this.cards, suitSorter);
+    }
+
     @Override
     public int compareTo(Hand otherHand) {
         if (this.sumOfValues() > otherHand.sumOfValues()) {
