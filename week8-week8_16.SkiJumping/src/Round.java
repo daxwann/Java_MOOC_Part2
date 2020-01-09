@@ -25,7 +25,7 @@ public class Round {
         System.out.println("Jumping order:");
         sortByPoints();
         for (int i = 1; i <= this.participants.size(); i++) {
-            System.out.println("  " + i + ". " + this.participants.get(i));
+            System.out.println("  " + i + ". " + this.participants.get(i - 1));
         }
     }
 
@@ -43,15 +43,15 @@ public class Round {
         for (Participant participant : this.participants) {
             System.out.println("  " + participant.getName());
 
-            Distance len = new Distance();
-            len.setRandomDistance();
-            System.out.println("    " + len);
+            int len = Distance.setRandomDistance();
+            participant.addJump(len);
+            System.out.println("    length: " + len);
 
             Judges scores = new Judges();
             scores.vote();
             System.out.println("    " + scores);
 
-            participant.addPoints(len.getDistance() + scores.calculatePoints());
+            participant.addPoints(len + scores.calculatePoints());
         }
     }
 }

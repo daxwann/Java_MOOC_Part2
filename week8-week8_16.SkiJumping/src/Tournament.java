@@ -1,6 +1,6 @@
-import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Tournament {
     private List<Participant> participants;
@@ -18,6 +18,18 @@ public class Tournament {
     }
 
     public void printResults() {
+        System.out.println("Tournament results:");
+        System.out.println("Position    Name");
 
+        SortByPoints sort = new SortByPoints();
+        Collections.sort(this.participants, sort);
+
+        for (int i = 1; i <= this.participants.size(); i++) {
+            Participant currParticipant = this.participants.get(i - 1);
+
+            System.out.print(i + "           ");
+            System.out.print(currParticipant + "\n");
+            System.out.println("            " + currParticipant.getJumps());
+        }
     }
 }
