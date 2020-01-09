@@ -25,10 +25,12 @@ public class UserInterface {
                 round.start();
                 round.nextRound();
             } else {
+                System.out.println("Thanks!");
                 break;
             }
         }
 
+        System.out.println("");
         this.tournament.printResults();
     }
 

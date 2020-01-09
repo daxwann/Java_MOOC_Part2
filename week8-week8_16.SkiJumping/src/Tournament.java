@@ -21,7 +21,7 @@ public class Tournament {
         System.out.println("Tournament results:");
         System.out.println("Position    Name");
 
-        SortByPoints sort = new SortByPoints();
+        ReverseSortByPoints sort = new ReverseSortByPoints();
         Collections.sort(this.participants, sort);
 
         for (int i = 1; i <= this.participants.size(); i++) {

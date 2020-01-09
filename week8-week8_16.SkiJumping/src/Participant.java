@@ -24,7 +24,7 @@ public class Participant {
     }
 
     public String toString() {
-        return this.name + " (" + this.points + ")";
+        return this.name + " (" + this.points + " points)";
     }
 
     public void addJump(int length) {
@@ -32,8 +32,8 @@ public class Participant {
     }
 
     public String getJumps() {
+        String str = "jump lengths: ";
 
-        String str = "jump length: ";
         for (int i = 0; i < this.jumps.size(); i++) {
             str = str + this.jumps.get(i) + " m";
 

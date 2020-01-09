@@ -17,7 +17,7 @@ public class Round {
     }
 
     public void sortByPoints() {
-        ReverseSortByPoints sorter = new ReverseSortByPoints();
+        SortByPoints sorter = new SortByPoints();
         Collections.sort(this.participants, sorter);
     }
 
@@ -35,7 +35,6 @@ public class Round {
         printJumpingOrder();
         System.out.println(" ");
         results();
-        System.out.println("");
     }
 
     public void results() {

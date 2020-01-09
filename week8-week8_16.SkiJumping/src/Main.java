@@ -7,11 +7,7 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         Tournament tournament = new Tournament();
 
-//        UserInterface ui = new UserInterface(reader, tournament);
-        tournament.addParticipant("Dax");
-        tournament.addParticipant("Annie");
-        tournament.addParticipant("Joffrey");
-
-
+        UserInterface ui = new UserInterface(reader, tournament);
+        ui.start();
     }
 }
