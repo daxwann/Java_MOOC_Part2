@@ -11,6 +11,8 @@ public class Printer {
     }
 
     public void printLinesWhichContain(String word) throws Exception {
+        this.reader = new Scanner(this.file, "UTF-8");
+
         while (reader.hasNextLine()) {
             String line = reader.nextLine();
 
@@ -20,6 +22,5 @@ public class Printer {
         }
 
         this.reader.close();
-        this.reader = new Scanner(this.file, "UTF-8");
     }
 }
