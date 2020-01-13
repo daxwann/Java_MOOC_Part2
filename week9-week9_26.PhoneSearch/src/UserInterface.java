@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Set;
+import java.util.List;
 
 public class UserInterface {
     private Scanner reader;
@@ -143,7 +144,7 @@ public class UserInterface {
         System.out.print("keyword (if empty, all listed): ");
         String keyword = this.reader.nextLine();
 
-        Set<Person> listing = this.phonebook.filter(keyword);
+        List<Person> listing = this.phonebook.filter(keyword);
 
         if (listing.isEmpty()) {
             System.out.println(" keyword not found");
@@ -151,6 +152,7 @@ public class UserInterface {
         }
 
         for (Person p : listing) {
+            System.out.println(" " + p.getName());
             printPersonalInfo(p);
         }
     }

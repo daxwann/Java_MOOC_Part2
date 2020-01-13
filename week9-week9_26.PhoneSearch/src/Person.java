@@ -1,7 +1,7 @@
 import java.util.Set;
 import java.util.HashSet;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private Address address;
     private Set<String> numbers;
@@ -30,5 +30,10 @@ public class Person {
 
     public Address getAddress() {
         return this.address;
+    }
+
+    @Override
+    public int compareTo(Person otherPerson) {
+        return this.name.compareTo(otherPerson.name);
     }
 }

@@ -1,6 +1,4 @@
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class Phonebook {
     private Map<String, Person> personByName;
@@ -87,8 +85,23 @@ public class Phonebook {
         }
     }
 
+    public List<Person> filter(String keyword) {
+        Set<Person> results = new HashSet<Person>();
 
-    public Set<Person> filter(String keyword) {
+        addFoundPersonToListing(this.personByName, results, keyword);
+        addFoundPersonToListing(this.personByAddress, results, keyword);
 
+        List<Person> listing = new ArrayList<Person>(results);
+        Collections.sort(listing);
+
+        return listing;
+    }
+
+    private void addFoundPersonToListing(Map<String, Person> listing, Set<Person> results, String keyword) {
+        for (String name : listing.keySet()) {
+            if (name.contains(keyword)) {
+                results.add(listing.get(name));
+            }
+        }
     }
 }
