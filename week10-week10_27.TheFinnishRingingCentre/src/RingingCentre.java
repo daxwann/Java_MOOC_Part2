@@ -34,4 +34,4 @@ public class RingingCentre {
             System.out.println(location);
         }
     }
-}
+}it comm
