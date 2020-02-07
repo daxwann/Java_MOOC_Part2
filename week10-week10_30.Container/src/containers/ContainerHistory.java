@@ -54,6 +54,21 @@ public class ContainerHistory {
         return greatest;
     }
 
+    public double variance() {
+        if (this.history.size() <= 1) {
+            return 0;
+        }
+
+        double avg = this.average();
+        double sum = 0;
+
+        for (double val : this.history) {
+            sum += Math.pow(val - avg, 2);
+        };
+
+        return sum / (this.history.size() - 1);
+    }
+
     @Override
     public String toString() {
         return this.history.toString();
